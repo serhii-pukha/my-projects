@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car insurance</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+    <link rel="icon" href="/images/icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<!-- Svg icons -->
+<svg style="display: none;">
+    <symbol id="arrows" viewBox="0 0 480.026 480.026">
+        <g>
+            <g>
+                <path d="M475.922,229.325l-144-160c-3.072-3.392-7.36-5.312-11.904-5.312h-96c-6.304,0-12.032,3.712-14.624,9.472 
+                c-2.56,5.792-1.504,12.544,2.72,17.216l134.368,149.312l-134.368,149.28c-4.224,4.704-5.312,11.456-2.72,17.216 
+                c2.592,5.792,8.32,9.504,14.624,9.504h96c4.544,0,8.832-1.952,11.904-5.28l144-160 
+                C481.394,244.653,481.394,235.373,475.922,229.325z"></path>
+            </g>
+        </g>
+        <g>
+            <g>
+                <path d="M267.922,229.325l-144-160c-3.072-3.392-7.36-5.312-11.904-5.312h-96c-6.304,0-12.032,3.712-14.624,9.472 
+                c-2.56,5.792-1.504,12.544,2.72,17.216l134.368,149.312L4.114,389.293c-4.224,4.704-5.312,11.456-2.72,17.216 
+                c2.592,5.792,8.32,9.504,14.624,9.504h96c4.544,0,8.832-1.952,11.904-5.28l144-160 
+                C273.394,244.653,273.394,235.373,267.922,229.325z"></path>
+            </g>
+        </g>
+    </symbol>
+
+    <symbol id="people" viewBox="0 0 60 60">
+        <path d="M55.014,45.389l-9.553-4.776C44.56,40.162,44,39.256,44,38.248v-3.381c0.229-0.28,0.47-0.599,0.719-0.951
+        c1.239-1.75,2.232-3.698,2.954-5.799C49.084,27.47,50,26.075,50,24.5v-4c0-0.963-0.36-1.896-1-2.625v-5.319
+        c0.056-0.55,0.276-3.824-2.092-6.525C44.854,3.688,41.521,2.5,37,2.5s-7.854,1.188-9.908,3.53c-1.435,1.637-1.918,3.481-2.064,4.805
+        C23.314,9.949,21.294,9.5,19,9.5c-10.389,0-10.994,8.855-11,9v4.579c-0.648,0.706-1,1.521-1,2.33v3.454
+        c0,1.079,0.483,2.085,1.311,2.765c0.825,3.11,2.854,5.46,3.644,6.285v2.743c0,0.787-0.428,1.509-1.171,1.915l-6.653,4.173
+        C1.583,48.134,0,50.801,0,53.703V57.5h14h2h44v-4.043C60,50.019,58.089,46.927,55.014,45.389z M14,53.262V55.5H2v-1.797
+        c0-2.17,1.184-4.164,3.141-5.233l6.652-4.173c1.333-0.727,2.161-2.121,2.161-3.641v-3.591l-0.318-0.297
+        c-0.026-0.024-2.683-2.534-3.468-5.955l-0.091-0.396l-0.342-0.22C9.275,29.899,9,29.4,9,28.863v-3.454
+        c0-0.36,0.245-0.788,0.671-1.174L10,23.938l-0.002-5.38C10.016,18.271,10.537,11.5,19,11.5c2.393,0,4.408,0.553,6,1.644v4.731
+        c-0.64,0.729-1,1.662-1,2.625v4c0,0.304,0.035,0.603,0.101,0.893c0.027,0.116,0.081,0.222,0.118,0.334
+        c0.055,0.168,0.099,0.341,0.176,0.5c0.001,0.002,0.002,0.003,0.003,0.005c0.256,0.528,0.629,1,1.099,1.377
+        c0.005,0.019,0.011,0.036,0.016,0.054c0.06,0.229,0.123,0.457,0.191,0.68l0.081,0.261c0.014,0.046,0.031,0.093,0.046,0.139
+        c0.035,0.108,0.069,0.215,0.105,0.321c0.06,0.175,0.123,0.356,0.196,0.553c0.031,0.082,0.065,0.156,0.097,0.237
+        c0.082,0.209,0.164,0.411,0.25,0.611c0.021,0.048,0.039,0.1,0.06,0.147l0.056,0.126c0.026,0.058,0.053,0.11,0.079,0.167
+        c0.098,0.214,0.194,0.421,0.294,0.621c0.016,0.032,0.031,0.067,0.047,0.099c0.063,0.125,0.126,0.243,0.189,0.363
+        c0.108,0.206,0.214,0.4,0.32,0.588c0.052,0.092,0.103,0.182,0.154,0.269c0.144,0.246,0.281,0.472,0.414,0.682
+        c0.029,0.045,0.057,0.092,0.085,0.135c0.242,0.375,0.452,0.679,0.626,0.916c0.046,0.063,0.086,0.117,0.125,0.17
+        c0.022,0.029,0.052,0.071,0.071,0.097v3.309c0,0.968-0.528,1.856-1.377,2.32l-2.646,1.443l-0.461-0.041l-0.188,0.395l-5.626,3.069
+        C15.801,46.924,14,49.958,14,53.262z M58,55.5H16v-2.238c0-2.571,1.402-4.934,3.659-6.164l8.921-4.866
+        C30.073,41.417,31,39.854,31,38.155v-4.018v-0.001l-0.194-0.232l-0.038-0.045c-0.002-0.003-0.064-0.078-0.165-0.21
+        c-0.006-0.008-0.012-0.016-0.019-0.024c-0.053-0.069-0.115-0.152-0.186-0.251c-0.001-0.002-0.002-0.003-0.003-0.005
+        c-0.149-0.207-0.336-0.476-0.544-0.8c-0.005-0.007-0.009-0.015-0.014-0.022c-0.098-0.153-0.202-0.32-0.308-0.497
+        c-0.008-0.013-0.016-0.026-0.024-0.04c-0.226-0.379-0.466-0.808-0.705-1.283c0,0-0.001-0.001-0.001-0.002
+        c-0.127-0.255-0.254-0.523-0.378-0.802l0,0c-0.017-0.039-0.035-0.077-0.052-0.116h0c-0.055-0.125-0.11-0.256-0.166-0.391
+        c-0.02-0.049-0.04-0.1-0.06-0.15c-0.052-0.131-0.105-0.263-0.161-0.414c-0.102-0.272-0.198-0.556-0.29-0.849l-0.055-0.178
+        c-0.006-0.02-0.013-0.04-0.019-0.061c-0.094-0.316-0.184-0.639-0.26-0.971l-0.091-0.396l-0.341-0.22
+        C26.346,25.803,26,25.176,26,24.5v-4c0-0.561,0.238-1.084,0.67-1.475L27,18.728V12.5v-0.354l-0.027-0.021
+        c-0.034-0.722,0.009-2.935,1.623-4.776C30.253,5.458,33.081,4.5,37,4.5c3.905,0,6.727,0.951,8.386,2.828
+        c1.947,2.201,1.625,5.017,1.623,5.041L47,18.728l0.33,0.298C47.762,19.416,48,19.939,48,20.5v4c0,0.873-0.572,1.637-1.422,1.899
+        l-0.498,0.153l-0.16,0.495c-0.669,2.081-1.622,4.003-2.834,5.713c-0.297,0.421-0.586,0.794-0.837,1.079L42,34.123v4.125
+        c0,1.77,0.983,3.361,2.566,4.153l9.553,4.776C56.513,48.374,58,50.78,58,53.457V55.5z"></path>
+    </symbol>
+
+    <symbol id="phone" viewBox="0 0 60 60">
+        <g>
+            <path d="M42.595,0H17.405C14.977,0,13,1.977,13,4.405v51.189C13,58.023,14.977,60,17.405,60h25.189C45.023,60,47,58.023,47,55.595
+            V4.405C47,1.977,45.023,0,42.595,0z M15,8h30v38H15V8z M17.405,2h25.189C43.921,2,45,3.079,45,4.405V6H15V4.405
+            C15,3.079,16.079,2,17.405,2z M42.595,58H17.405C16.079,58,15,56.921,15,55.595V48h30v7.595C45,56.921,43.921,58,42.595,58z"></path><path d="M30,49c-2.206,0-4,1.794-4,4s1.794,4,4,4s4-1.794,4-4S32.206,49,30,49z M30,55c-1.103,0-2-0.897-2-2s0.897-2,2-2
+            s2,0.897,2,2S31.103,55,30,55z"></path><path d="M26,5h4c0.553,0,1-0.447,1-1s-0.447-1-1-1h-4c-0.553,0-1,0.447-1,1S25.447,5,26,5z"></path><path d="M33,5h1c0.553,0,1-0.447,1-1s-0.447-1-1-1h-1c-0.553,0-1,0.447-1,1S32.447,5,33,5z"></path><path d="M56.612,4.569c-0.391-0.391-1.023-0.391-1.414,0s-0.391,1.023,0,1.414c3.736,3.736,3.736,9.815,0,13.552
+            c-0.391,0.391-0.391,1.023,0,1.414c0.195,0.195,0.451,0.293,0.707,0.293s0.512-0.098,0.707-0.293
+            C61.128,16.434,61.128,9.085,56.612,4.569z"></path><path d="M52.401,6.845c-0.391-0.391-1.023-0.391-1.414,0s-0.391,1.023,0,1.414c1.237,1.237,1.918,2.885,1.918,4.639
+            s-0.681,3.401-1.918,4.638c-0.391,0.391-0.391,1.023,0,1.414c0.195,0.195,0.451,0.293,0.707,0.293s0.512-0.098,0.707-0.293
+            c1.615-1.614,2.504-3.764,2.504-6.052S54.017,8.459,52.401,6.845z"></path><path d="M4.802,5.983c0.391-0.391,0.391-1.023,0-1.414s-1.023-0.391-1.414,0c-4.516,4.516-4.516,11.864,0,16.38
+            c0.195,0.195,0.451,0.293,0.707,0.293s0.512-0.098,0.707-0.293c0.391-0.391,0.391-1.023,0-1.414
+            C1.065,15.799,1.065,9.72,4.802,5.983z"></path><path d="M9.013,6.569c-0.391-0.391-1.023-0.391-1.414,0c-1.615,1.614-2.504,3.764-2.504,6.052s0.889,4.438,2.504,6.053
+            c0.195,0.195,0.451,0.293,0.707,0.293s0.512-0.098,0.707-0.293c0.391-0.391,0.391-1.023,0-1.414
+            c-1.237-1.237-1.918-2.885-1.918-4.639S7.775,9.22,9.013,7.983C9.403,7.593,9.403,6.96,9.013,6.569z"></path>
+        </g>
+    </symbol>
+
+    <symbol id="bulb" viewBox="0 0 54 54">
+        <g>
+            <path d="M27,8c-9.374,0-17,7.626-17,17c0,7.112,4.391,13.412,11,15.9V50c0,0.553,0.447,1,1,1h1v2c0,0.553,0.447,1,1,1h6
+            c0.553,0,1-0.447,1-1v-2h1c0.553,0,1-0.447,1-1v-9.1c6.609-2.488,11-8.788,11-15.9C44,15.626,36.374,8,27,8z M30,49
+            c-0.553,0-1,0.447-1,1v2h-4v-2c0-0.553-0.447-1-1-1h-1v-5h8v5H30z M31.688,39.242C31.277,39.377,31,39.761,31,40.192V42h-8v-1.808
+            c0-0.432-0.277-0.815-0.688-0.95C16.145,37.214,12,31.49,12,25c0-8.271,6.729-15,15-15s15,6.729,15,15
+            C42,31.49,37.855,37.214,31.688,39.242z"></path><path d="M27,6c0.553,0,1-0.447,1-1V1c0-0.553-0.447-1-1-1s-1,0.447-1,1v4C26,5.553,26.447,6,27,6z"></path><path d="M51,24h-4c-0.553,0-1,0.447-1,1s0.447,1,1,1h4c0.553,0,1-0.447,1-1S51.553,24,51,24z"></path><path d="M7,24H3c-0.553,0-1,0.447-1,1s0.447,1,1,1h4c0.553,0,1-0.447,1-1S7.553,24,7,24z"></path><path d="M43.264,7.322l-2.828,2.828c-0.391,0.391-0.391,1.023,0,1.414c0.195,0.195,0.451,0.293,0.707,0.293
+            s0.512-0.098,0.707-0.293l2.828-2.828c0.391-0.391,0.391-1.023,0-1.414S43.654,6.932,43.264,7.322z"></path><path d="M12.15,38.436l-2.828,2.828c-0.391,0.391-0.391,1.023,0,1.414c0.195,0.195,0.451,0.293,0.707,0.293
+            s0.512-0.098,0.707-0.293l2.828-2.828c0.391-0.391,0.391-1.023,0-1.414S12.541,38.045,12.15,38.436z"></path><path d="M41.85,38.436c-0.391-0.391-1.023-0.391-1.414,0s-0.391,1.023,0,1.414l2.828,2.828c0.195,0.195,0.451,0.293,0.707,0.293
+            s0.512-0.098,0.707-0.293c0.391-0.391,0.391-1.023,0-1.414L41.85,38.436z"></path><path d="M12.15,11.564c0.195,0.195,0.451,0.293,0.707,0.293s0.512-0.098,0.707-0.293c0.391-0.391,0.391-1.023,0-1.414l-2.828-2.828
+            c-0.391-0.391-1.023-0.391-1.414,0s-0.391,1.023,0,1.414L12.15,11.564z"></path><path d="M27,13c-6.617,0-12,5.383-12,12c0,0.553,0.447,1,1,1s1-0.447,1-1c0-5.514,4.486-10,10-10c0.553,0,1-0.447,1-1
+            S27.553,13,27,13z"></path>
+        </g>
+    </symbol>
+    
+    <symbol id="collapse" viewBox="0 0 16 16">
+        <path d="M8,10.7L1.6,5.3c-0.4-0.4-1-0.4-1.3,0c-0.4,0.4-0.4,0.9,0,1.3l7.2,6.1c0.1,0.1,0.4,0.2,0.6,0.2s0.4-0.1,0.6-0.2l7.1-6
+            c0.4-0.4,0.4-0.9,0-1.3c-0.4-0.4-1-0.4-1.3,0L8,10.7z"></path>
+    </symbol>
+</svg> <!-- /. svg icons -->
+
+<section class="intro">
+    <div class="container">
+        <div class="intro__inner">
+            <h1>Finding the best car insurance company for you</h1>
+            <p>Pricing and discounts made up a portion of each insurer’s score, but we know that cost is the top factor for many auto insurance shoppers. Since pricing is based on personal factors including your age, location, vehicle and credit history and gender (in most cases), it’s important to shop around for car insurance quotes.</p>
+            <p>If price is the most important factor in your search, comparing car insurance quotes can help you find the cheapest rate. But your shopping experience will also shed light on a company’s customer service standards.</p>
+            <div>
+                <svg class="intro__arrows">
+                    <use xlink:href="#arrows"></use>
+                </svg>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="about">
+    <div class="container">
+        <div class="about__inner">
+            <h2>Insurance and investing for your many sides</h2>
+            <p>We've been protecting people, businesses and futures for more than 90 years.</p>
+            <div class="cards">
+                <div class="card">
+                    <div class="card__icon">
+                        <svg class="card__icon--inner">
+                            <use xlink:href="#people"></use>
+                        </svg>
+                    </div>
+                    <h3 class="card__title">For you and your family</h3>
+                    <p class="card__text">We protect vehicles, property, pets and events.</p>
+                    <button class="card__button">Read more</button>
+                </div>
+                <div class="card">
+                    <div class="card__icon">
+                        <svg class="card__icon--inner">
+                            <use xlink:href="#phone"></use>
+                        </svg>
+                    </div>
+                    <h3 class="card__title">For your business</h3>
+                    <p class="card__text">We protect businesses and employees, as well as company property and vehicles.</p>
+                    <button class="card__button">Read more</button>
+                </div>
+                <div class="card">
+                    <div class="card__icon">
+                        <svg class="card__icon--inner">
+                            <use xlink:href="#bulb"></use>
+                        </svg>
+                    </div>
+                    <h3 class="card__title">For your future</h3>
+                    <p class="card__text">We protect investments, retirements and financial dreams.</p>
+                    <button class="card__button">Read more</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="info">
+    <div class="container">
+        <div class="info__inner">
+            <div class="info__blocks">
+                <div class="info__blok blok--left">
+                    <h2>Finding the best car insurance company for you</h2>
+                    <p>
+                        Pricing and discounts made up a portion of each insurer’s score, 
+                        but we know that cost is the top factor for many auto insurance shoppers. 
+                        Since pricing is based on personal factors including your age, location, 
+                        vehicle and credit history and gender (in most cases), 
+                        it’s important to shop around for car insurance quotes.
+                    </p>
+                    <p>
+                        If price is the most important factor in your search, 
+                        comparing car insurance quotes can help you find the cheapest rate. 
+                        But your shopping experience will also shed light on a company’s customer service standards.
+                    </p>
+                </div>
+                <div class="info__blok blok--right">
+                    <h2>To find the top car insurance companies:</h2>
+                    <ol>
+                        <li>Visit your state insurance commissioner’s website to find complaints and other information about companies in your area.</li>
+                        <li>Ask your agent or a customer service representative any questions you have to make sure you’re getting all the coverage you need — and nothing you don’t want.</li>
+                        <li>Consider smaller insurance companies, too. Small companies offer rates well below large competitors in many locations.</li>
+                        <li>If you’ve had tickets, DUIs or other violations, be sure to shop three and five years after the incident, when surcharges can drop significantly.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="info__images">
+                <div class="info__image">
+                    <img src="images/info1.jpeg">
+                </div>
+
+                <div class="info__image">
+                    <img src="images/info2.jpeg">
+                </div>
+            
+                <div class="info__image">
+                    <img src="images/intro.jpeg">
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="notice">
+    <div class="container">
+        <div class="notice__inner">
+            <h2>The Best <i>Insurance</i> Companies for 2021</h2>
+            <p>you're in <span>good hands</span></p>
+        </div>
+    </div>
+</section>
+
+<section class="rating">
+    <div class="container">
+        <div class="rating__inner">
+            <div class="rating__text">
+                <h2>The Best Car Insurance Companies for 2021</h2>
+                <p>We looked at claims processes, transparency, complaints and more to find and rank the best car insurance companies.</p>
+                <p class="rating__text--special">Many or all of the products featured here are from our partners who compensate us. This may influence which products we write about and where and how the product appears on a page. However, this does not influence our evaluations. Our opinions are our own.</p>
+                <p>The best car insurance companies give their customers more than just coverage they want at a reasonable price — merely good companies can do that. On top of that, the best auto insurance companies provide a customer-first experience from quote to claim, including a headache-free way to manage policies and make payments.</p>
+            </div>
+            <div class="rating__img">
+                <img src="images/info1.jpeg">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="faq">
+    <div class="container">
+        <div class="faq__inner">
+            <h2>Faq</h2>
+            <p>Sample text. Click to select the text box. Click again or double click to start editing the text.</p>
+            <button class="collapsible">What's included in the quoted daily rate?
+                <svg class="collapsible__icon">
+                    <use xlink:href="#collapse"></use>
+                </svg>
+            </button>
+            <div class="content">
+                <p>Answer. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id suscipit ex. Suspendisse rhoncus laoreet purus quis elementum. Phasellus sed efficitur dolor, et ultricies sapien. Quisque fringilla sit amet dolor commodo efficitur. Aliquam et sem odio. In ullamcorper nisi nunc, et molestie ipsum iaculis sit amet.</p>
+            </div>
+            <button class="collapsible">What is the rental's mileage plan?
+                <svg class="collapsible__icon">
+                    <use xlink:href="#collapse"></use>
+                </svg>
+            </button>
+            <button class="collapsible">What are your extra insurance options?
+                <svg class="collapsible__icon">
+                    <use xlink:href="#collapse"></use>
+                </svg>
+            </button>
+            <button class="collapsible">Do I need to return the rental with a full tank?
+                <svg class="collapsible__icon">
+                    <use xlink:href="#collapse"></use>
+                </svg>
+            </button>
+        </div>
+    </div>
+</section>
+
+<section class="lamba">
+    <div class="container">
+        <div class="lamba__inner">
+            <img src="images/lamborghini.jpeg">
+            <p>Safe. Relaxing. Good to ride in. Subtly decorated.</p>
+        </div>
+    </div>
+</section>
+
+<section class="contact">
+    <div class="container">
+        <div class="contact__inner">
+            <div class="contact__text">
+                <p>Ready to talk?</p>
+                <h2>Contact Us</h2>
+                <p>Massa tempor nec feugiat nisl pretium fusce id velit. Accumsan tortor posuere ac ut. Aenean pharetra magna ac placerat vestibulum lectus. Praesent semper feugiat nibh sed pulvinar. Lorem sed risus ultricies tristique. </p>
+                <p>Dictumst vestibulum rhoncus est pellentesque elit ullamcorper. Amet dictum sit amet justo donec enim diam vulputate. Ut morbi tincidunt augue interdum velit euismod in pellentesque. Volutpat lacus laoreet non curabitur.</p>
+            </div>
+            <form action="">
+                <input type="text" name="name" placeholder="Enter your name">
+                <input type="text" name="email" placeholder="Enter a valid email address">
+                <textarea placeholder="Enter your message" rows="5"></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</section>
+</body>
+</html>
