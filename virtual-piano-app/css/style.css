@@ -1,0 +1,58 @@
+body {
+    background-color: #3c99dc;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.25rem;
+}
+
+.container {
+    width: 90%;
+    margin: 150px auto;
+    display: flex;
+    justify-content: center;
+}
+
+.keys {
+    display: flex;
+}
+
+.black-keys {
+    position: absolute;
+}
+
+kbd {
+    display: inline-block;
+}
+
+.white-keys kbd {
+    background-color: #fff;
+    color: #2b2b2b;
+    padding: 250px 45px 50px 45px;
+    border-radius: 5px;
+}
+
+.black-keys kbd {
+    position: relative;
+    background-color: #2b2b2b;
+    color: #fff;
+    padding: 150px 25px 25px 25px;
+}
+
+.black-keys kbd:nth-child(1) {
+    left: 3.5em;
+}
+
+.black-keys kbd:nth-child(2) {
+    left: 5.5em;
+}
+
+.black-keys kbd:nth-child(3) {
+    left: 13em;
+}
+
+.black-keys kbd:nth-child(4) {
+    left: 15em;
+}
+
+.black-keys kbd:nth-child(5) {
+    left: 17em;
+}
